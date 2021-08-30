@@ -1,0 +1,567 @@
+A = [16 3 2 13; 5 10 11 8; 9 6 7 12; 4 15 14 1]
+
+A =
+
+    16     3     2    13
+     5    10    11     8
+     9     6     7    12
+     4    15    14     1
+
+sum(A)
+
+ans =
+
+    34    34    34    34
+
+A'
+
+ans =
+
+    16     5     9     4
+     3    10     6    15
+     2    11     7    14
+    13     8    12     1
+
+sum(A')'
+
+ans =
+
+    34
+    34
+    34
+    34
+
+diag(A)
+
+ans =
+
+    16
+    10
+     7
+     1
+
+sum(diag(A))
+
+ans =
+
+    34
+
+sum(diag(fliplr(A)))
+
+ans =
+
+    34
+
+A(1,4) + A(2,4) + A(3,4) + A(4,4)
+
+ans =
+
+    34
+
+
+t = A(4,5)
+{Index in position 2 exceeds array bounds (must not exceed 4).
+} 
+
+X = A;
+
+X(4,5) = 17
+
+X =
+
+    16     3     2    13     0
+     5    10    11     8     0
+     9     6     7    12     0
+     4    15    14     1    17
+
+
+1:10
+
+ans =
+
+     1     2     3     4     5     6     7     8     9    10
+
+
+100:-7:50
+
+ans =
+
+   100    93    86    79    72    65    58    51
+
+
+0:pi/4:pi
+
+ans =
+
+         0    0.7854    1.5708    2.3562    3.1416
+
+A(1:k,j)
+{Unrecognized function or variable 'k'.
+} 
+
+sum(A(1:4,4)) 
+
+ans =
+
+    34
+
+sum(A(:,end))
+
+ans =
+
+    34
+
+sum(1:16)/4
+
+ans =
+
+    34
+
+
+B = magic(4)
+
+B =
+
+    16     2     3    13
+     5    11    10     8
+     9     7     6    12
+     4    14    15     1
+
+A = B(:,[1 3 2 4])
+
+A =
+
+    16     3     2    13
+     5    10    11     8
+     9     6     7    12
+     4    15    14     1
+
+num_students = 25
+
+num_students =
+
+    25
+
+help elfun
+  Elementary math functions.
+ 
+  Trigonometric.
+    <a href="matlab:help sin -displayBanner">sin</a>         - Sine.
+    <a href="matlab:help sind -displayBanner">sind</a>        - Sine of argument in degrees.
+    <a href="matlab:help sinh -displayBanner">sinh</a>        - Hyperbolic sine.
+    <a href="matlab:help asin -displayBanner">asin</a>        - Inverse sine.
+    <a href="matlab:help asind -displayBanner">asind</a>       - Inverse sine, result in degrees.
+    <a href="matlab:help asinh -displayBanner">asinh</a>       - Inverse hyperbolic sine.
+    <a href="matlab:help cos -displayBanner">cos</a>         - Cosine.
+    <a href="matlab:help cosd -displayBanner">cosd</a>        - Cosine of argument in degrees.
+    <a href="matlab:help cosh -displayBanner">cosh</a>        - Hyperbolic cosine.
+    <a href="matlab:help acos -displayBanner">acos</a>        - Inverse cosine.
+    <a href="matlab:help acosd -displayBanner">acosd</a>       - Inverse cosine, result in degrees.
+    <a href="matlab:help acosh -displayBanner">acosh</a>       - Inverse hyperbolic cosine.
+    <a href="matlab:help tan -displayBanner">tan</a>         - Tangent.
+    <a href="matlab:help tand -displayBanner">tand</a>        - Tangent of argument in degrees.
+    <a href="matlab:help tanh -displayBanner">tanh</a>        - Hyperbolic tangent.
+    <a href="matlab:help atan -displayBanner">atan</a>        - Inverse tangent.
+    <a href="matlab:help atand -displayBanner">atand</a>       - Inverse tangent, result in degrees.
+    <a href="matlab:help atan2 -displayBanner">atan2</a>       - Four quadrant inverse tangent.
+    <a href="matlab:help atan2d -displayBanner">atan2d</a>      - Four quadrant inverse tangent, result in degrees.
+    <a href="matlab:help atanh -displayBanner">atanh</a>       - Inverse hyperbolic tangent.
+    <a href="matlab:help sec -displayBanner">sec</a>         - Secant.
+    <a href="matlab:help secd -displayBanner">secd</a>        - Secant of argument in degrees.
+    <a href="matlab:help sech -displayBanner">sech</a>        - Hyperbolic secant.
+    <a href="matlab:help asec -displayBanner">asec</a>        - Inverse secant.
+    <a href="matlab:help asecd -displayBanner">asecd</a>       - Inverse secant, result in degrees.
+    <a href="matlab:help asech -displayBanner">asech</a>       - Inverse hyperbolic secant.
+    <a href="matlab:help csc -displayBanner">csc</a>         - Cosecant.
+    <a href="matlab:help cscd -displayBanner">cscd</a>        - Cosecant of argument in degrees.
+    <a href="matlab:help csch -displayBanner">csch</a>        - Hyperbolic cosecant.
+    <a href="matlab:help acsc -displayBanner">acsc</a>        - Inverse cosecant.
+    <a href="matlab:help acscd -displayBanner">acscd</a>       - Inverse cosecant, result in degrees.
+    <a href="matlab:help acsch -displayBanner">acsch</a>       - Inverse hyperbolic cosecant.
+    <a href="matlab:help cot -displayBanner">cot</a>         - Cotangent.
+    <a href="matlab:help cotd -displayBanner">cotd</a>        - Cotangent of argument in degrees.
+    <a href="matlab:help coth -displayBanner">coth</a>        - Hyperbolic cotangent.
+    <a href="matlab:help acot -displayBanner">acot</a>        - Inverse cotangent.
+    <a href="matlab:help acotd -displayBanner">acotd</a>       - Inverse cotangent, result in degrees.
+    <a href="matlab:help acoth -displayBanner">acoth</a>       - Inverse hyperbolic cotangent.
+    <a href="matlab:help hypot -displayBanner">hypot</a>       - Square root of sum of squares.
+    <a href="matlab:help deg2rad -displayBanner">deg2rad</a>     - Convert angles from degrees to radians.
+    <a href="matlab:help rad2deg -displayBanner">rad2deg</a>     - Convert angles from radians to degrees.
+ 
+  Exponential.
+    <a href="matlab:help exp -displayBanner">exp</a>         - Exponential.
+    <a href="matlab:help expm1 -displayBanner">expm1</a>       - Compute exp(x)-1 accurately.
+    <a href="matlab:help log -displayBanner">log</a>         - Natural logarithm.
+    <a href="matlab:help log1p -displayBanner">log1p</a>       - Compute log(1+x) accurately.
+    <a href="matlab:help log10 -displayBanner">log10</a>       - Common (base 10) logarithm.
+    <a href="matlab:help log2 -displayBanner">log2</a>        - Base 2 logarithm and dissect floating point number.
+    <a href="matlab:help pow2 -displayBanner">pow2</a>        - Base 2 power and scale floating point number.
+    <a href="matlab:help realpow -displayBanner">realpow</a>     - Power that will error out on complex result.
+    <a href="matlab:help reallog -displayBanner">reallog</a>     - Natural logarithm of real number.
+    <a href="matlab:help realsqrt -displayBanner">realsqrt</a>    - Square root of number greater than or equal to zero.
+    <a href="matlab:help sqrt -displayBanner">sqrt</a>        - Square root.
+    <a href="matlab:help nthroot -displayBanner">nthroot</a>     - Real n-th root of real numbers.
+    <a href="matlab:help nextpow2 -displayBanner">nextpow2</a>    - Next higher power of 2.
+ 
+  Complex.
+    <a href="matlab:help abs -displayBanner">abs</a>         - Absolute value.
+    <a href="matlab:help angle -displayBanner">angle</a>       - Phase angle.
+    <a href="matlab:help complex -displayBanner">complex</a>     - Construct complex data from real and imaginary parts.
+    <a href="matlab:help conj -displayBanner">conj</a>        - Complex conjugate.
+    <a href="matlab:help imag -displayBanner">imag</a>        - Complex imaginary part.
+    <a href="matlab:help real -displayBanner">real</a>        - Complex real part.
+    <a href="matlab:help unwrap -displayBanner">unwrap</a>      - Unwrap phase angle.
+    <a href="matlab:help isreal -displayBanner">isreal</a>      - True for real array.
+    <a href="matlab:help cplxpair -displayBanner">cplxpair</a>    - Sort numbers into complex conjugate pairs.
+ 
+  Rounding and remainder.
+    <a href="matlab:help fix -displayBanner">fix</a>         - Round towards zero.
+    <a href="matlab:help floor -displayBanner">floor</a>       - Round towards minus infinity.
+    <a href="matlab:help ceil -displayBanner">ceil</a>        - Round towards plus infinity.
+    <a href="matlab:help round -displayBanner">round</a>       - Round towards nearest integer.
+    <a href="matlab:help mod -displayBanner">mod</a>         - Modulus (signed remainder after division).
+    <a href="matlab:help rem -displayBanner">rem</a>         - Remainder after division.
+    <a href="matlab:help sign -displayBanner">sign</a>        - Signum.
+
+
+help specfun
+  Specialized math functions.
+ 
+  Specialized math functions.
+    <a href="matlab:help airy -displayBanner">airy</a>        - Airy functions.
+    <a href="matlab:help besselj -displayBanner">besselj</a>     - Bessel function of the first kind.
+    <a href="matlab:help bessely -displayBanner">bessely</a>     - Bessel function of the second kind.
+    <a href="matlab:help besselh -displayBanner">besselh</a>     - Bessel functions of the third kind (Hankel function).
+    <a href="matlab:help besseli -displayBanner">besseli</a>     - Modified Bessel function of the first kind.
+    <a href="matlab:help besselk -displayBanner">besselk</a>     - Modified Bessel function of the second kind.
+    <a href="matlab:help beta -displayBanner">beta</a>        - Beta function.
+    <a href="matlab:help betainc -displayBanner">betainc</a>     - Incomplete beta function.
+    <a href="matlab:help betaincinv -displayBanner">betaincinv</a>  - Inverse incomplete beta function.
+    <a href="matlab:help betaln -displayBanner">betaln</a>      - Logarithm of beta function.
+    <a href="matlab:help ellipj -displayBanner">ellipj</a>      - Jacobi elliptic functions.
+    <a href="matlab:help ellipke -displayBanner">ellipke</a>     - Complete elliptic integral.
+    <a href="matlab:help erf -displayBanner">erf</a>         - Error function.
+    <a href="matlab:help erfc -displayBanner">erfc</a>        - Complementary error function.
+    <a href="matlab:help erfcx -displayBanner">erfcx</a>       - Scaled complementary error function.
+    <a href="matlab:help erfinv -displayBanner">erfinv</a>      - Inverse error function.
+    <a href="matlab:help erfcinv -displayBanner">erfcinv</a>     - Inverse complementary error function.
+    <a href="matlab:help expint -displayBanner">expint</a>      - Exponential integral function.
+    <a href="matlab:help gamma -displayBanner">gamma</a>       - Gamma function.
+    <a href="matlab:help gammainc -displayBanner">gammainc</a>    - Incomplete gamma function.
+    <a href="matlab:help gammaincinv -displayBanner">gammaincinv</a> - Inverse incomplete gamma function. 
+    <a href="matlab:help gammaln -displayBanner">gammaln</a>     - Logarithm of gamma function.
+    <a href="matlab:help psi -displayBanner">psi</a>         - Psi (polygamma) function.
+    <a href="matlab:help legendre -displayBanner">legendre</a>    - Associated Legendre function.
+    <a href="matlab:help cross -displayBanner">cross</a>       - Vector cross product.
+    <a href="matlab:help dot -displayBanner">dot</a>         - Vector dot product.
+ 
+  Number theoretic functions.
+    <a href="matlab:help factor -displayBanner">factor</a>      - Prime factors.
+    <a href="matlab:help isprime -displayBanner">isprime</a>     - True for prime numbers.
+    <a href="matlab:help primes -displayBanner">primes</a>      - Generate list of prime numbers.
+    <a href="matlab:help gcd -displayBanner">gcd</a>         - Greatest common divisor.
+    <a href="matlab:help lcm -displayBanner">lcm</a>         - Least common multiple.
+    <a href="matlab:help rat -displayBanner">rat</a>         - Rational approximation.
+    <a href="matlab:help rats -displayBanner">rats</a>        - Rational output.
+    <a href="matlab:help perms -displayBanner">perms</a>       - All possible permutations.
+    <a href="matlab:help nchoosek -displayBanner">nchoosek</a>    - All combinations of N elements taken K at a time.
+    <a href="matlab:help factorial -displayBanner">factorial</a>   - Factorial function.
+ 
+  Coordinate transforms.
+    <a href="matlab:help cart2sph -displayBanner">cart2sph</a>    - Transform Cartesian to spherical coordinates.
+    <a href="matlab:help cart2pol -displayBanner">cart2pol</a>    - Transform Cartesian to polar coordinates.
+    <a href="matlab:help pol2cart -displayBanner">pol2cart</a>    - Transform polar to Cartesian coordinates.
+    <a href="matlab:help sph2cart -displayBanner">sph2cart</a>    - Transform spherical to Cartesian coordinates.
+    <a href="matlab:help hsv2rgb -displayBanner">hsv2rgb</a>     - Convert hue-saturation-value colors to red-green-blue.
+    <a href="matlab:help rgb2hsv -displayBanner">rgb2hsv</a>     - Convert red-green-blue colors to hue-saturation-value.
+
+
+help elmat
+  Elementary matrices and matrix manipulation.
+ 
+  Elementary matrices.
+    <a href="matlab:help zeros -displayBanner">zeros</a>       - Zeros array.
+    <a href="matlab:help ones -displayBanner">ones</a>        - Ones array.
+    <a href="matlab:help eye -displayBanner">eye</a>         - Identity matrix.
+    <a href="matlab:help repmat -displayBanner">repmat</a>      - Replicate and tile array.
+    <a href="matlab:help repelem -displayBanner">repelem</a>     - Replicate elements of an array.
+    <a href="matlab:help linspace -displayBanner">linspace</a>    - Linearly spaced vector.
+    <a href="matlab:help logspace -displayBanner">logspace</a>    - Logarithmically spaced vector.
+    <a href="matlab:help freqspace -displayBanner">freqspace</a>   - Frequency spacing for frequency response.
+    <a href="matlab:help meshgrid -displayBanner">meshgrid</a>    - X and Y arrays for 3-D plots.
+    <a href="matlab:help accumarray -displayBanner">accumarray</a>  - Construct an array with accumulation.
+    <a href="matlab:help : -displayBanner">:</a>           - Regularly spaced vector and index into matrix.
+ 
+  Basic array information.
+    <a href="matlab:help size -displayBanner">size</a>        - Size of array.
+    <a href="matlab:help length -displayBanner">length</a>      - Length of vector.
+    <a href="matlab:help ndims -displayBanner">ndims</a>       - Number of dimensions.
+    <a href="matlab:help numel -displayBanner">numel</a>       - Number of elements.
+    <a href="matlab:help disp -displayBanner">disp</a>        - Display matrix or text.
+    <a href="matlab:help isempty -displayBanner">isempty</a>     - True for empty array.
+    <a href="matlab:help isequal -displayBanner">isequal</a>     - True if arrays are numerically equal.
+    <a href="matlab:help isequaln -displayBanner">isequaln</a>    - True if arrays are numerically equal, treating NaNs as equal.
+    <a href="matlab:help height -displayBanner">height</a>      - Number of rows.
+    <a href="matlab:help width -displayBanner">width</a>       - Number of columns.
+ 
+  Matrix manipulation.
+    <a href="matlab:help cat -displayBanner">cat</a>         - Concatenate arrays.
+    <a href="matlab:help reshape -displayBanner">reshape</a>     - Reshape array.
+    <a href="matlab:help diag -displayBanner">diag</a>        - Diagonal matrices and diagonals of matrix.
+    <a href="matlab:help blkdiag -displayBanner">blkdiag</a>     - Block diagonal concatenation.
+    <a href="matlab:help tril -displayBanner">tril</a>        - Extract lower triangular part.
+    <a href="matlab:help triu -displayBanner">triu</a>        - Extract upper triangular part.
+    <a href="matlab:help fliplr -displayBanner">fliplr</a>      - Flip matrix in left/right direction.
+    <a href="matlab:help flipud -displayBanner">flipud</a>      - Flip matrix in up/down direction.
+    <a href="matlab:help flip -displayBanner">flip</a>        - Flip the order of elements.
+    <a href="matlab:help rot90 -displayBanner">rot90</a>       - Rotate matrix 90 degrees.
+    <a href="matlab:help : -displayBanner">:</a>           - Regularly spaced vector and index into matrix.
+    <a href="matlab:help find -displayBanner">find</a>        - Find indices of nonzero elements.
+    <a href="matlab:help end -displayBanner">end</a>         - Last index.
+    <a href="matlab:help sub2ind -displayBanner">sub2ind</a>     - Linear index from multiple subscripts.
+    <a href="matlab:help ind2sub -displayBanner">ind2sub</a>     - Multiple subscripts from linear index.
+    <a href="matlab:help bsxfun -displayBanner">bsxfun</a>      - Binary singleton expansion function.
+ 
+  Multi-dimensional array functions.
+    <a href="matlab:help ndgrid -displayBanner">ndgrid</a>      - Generate arrays for N-D functions and interpolation.
+    <a href="matlab:help permute -displayBanner">permute</a>     - Permute array dimensions.
+    <a href="matlab:help ipermute -displayBanner">ipermute</a>    - Inverse permute array dimensions.
+    <a href="matlab:help shiftdim -displayBanner">shiftdim</a>    - Shift dimensions.
+    <a href="matlab:help circshift -displayBanner">circshift</a>   - Shift array circularly.
+    <a href="matlab:help squeeze -displayBanner">squeeze</a>     - Remove singleton dimensions.
+ 
+  Array utility functions.
+    <a href="matlab:help isscalar -displayBanner">isscalar</a>    - True for scalar.
+    <a href="matlab:help isvector -displayBanner">isvector</a>    - True for vector.
+    <a href="matlab:help isrow -displayBanner">isrow</a>       - True for row vector.
+    <a href="matlab:help iscolumn -displayBanner">iscolumn</a>    - True for column vector.
+    <a href="matlab:help ismatrix -displayBanner">ismatrix</a>    - True for matrix.
+ 
+  Special variables and constants.
+    <a href="matlab:help eps -displayBanner">eps</a>         - Floating point relative accuracy.
+    <a href="matlab:help realmax -displayBanner">realmax</a>     - Largest positive floating point number.
+    <a href="matlab:help realmin -displayBanner">realmin</a>     - Smallest positive floating point number.
+    <a href="matlab:help intmax -displayBanner">intmax</a>      - Largest positive integer value.
+    <a href="matlab:help intmin -displayBanner">intmin</a>      - Smallest integer value.
+    <a href="matlab:help flintmax -displayBanner">flintmax</a>    - Largest consecutive integer in floating point format.
+    <a href="matlab:help pi -displayBanner">pi</a>          - 3.1415926535897....
+    <a href="matlab:help i -displayBanner">i</a>           - Imaginary unit.
+    <a href="matlab:help inf -displayBanner">inf</a>         - Infinity.
+    <a href="matlab:help nan -displayBanner">nan</a>         - Not-a-Number.
+    <a href="matlab:help isnan -displayBanner">isnan</a>       - True for Not-a-Number.
+    <a href="matlab:help isinf -displayBanner">isinf</a>       - True for infinite elements.
+    <a href="matlab:help isfinite -displayBanner">isfinite</a>    - True for finite elements.
+    <a href="matlab:help j -displayBanner">j</a>           - Imaginary unit.
+    <a href="matlab:help true -displayBanner">true</a>        - True array.
+    <a href="matlab:help false -displayBanner">false</a>       - False array.
+ 
+  Specialized matrices.
+    <a href="matlab:help compan -displayBanner">compan</a>      - Companion matrix.
+    <a href="matlab:help gallery -displayBanner">gallery</a>     - Test matrices.
+    <a href="matlab:help hadamard -displayBanner">hadamard</a>    - Hadamard matrix.
+    <a href="matlab:help hankel -displayBanner">hankel</a>      - Hankel matrix.
+    <a href="matlab:help hilb -displayBanner">hilb</a>        - Hilbert matrix.
+    <a href="matlab:help invhilb -displayBanner">invhilb</a>     - Inverse Hilbert matrix.
+    <a href="matlab:help magic -displayBanner">magic</a>       - Magic square.
+    <a href="matlab:help pascal -displayBanner">pascal</a>      - Pascal matrix.
+    <a href="matlab:help rosser -displayBanner">rosser</a>      - Classic symmetric eigenvalue test problem.
+    <a href="matlab:help toeplitz -displayBanner">toeplitz</a>    - Toeplitz matrix.
+    <a href="matlab:help vander -displayBanner">vander</a>      - Vandermonde matrix.
+    <a href="matlab:help wilkinson -displayBanner">wilkinson</a>   - Wilkinson's eigenvalue test matrix.
+
+eps = 1.e-6
+
+eps =
+
+   1.0000e-06
+
+clear eps
+
+rho = (1+sqrt(5))/2
+
+rho =
+
+    1.6180
+
+a = abs(3+4i)
+
+a =
+
+     5
+
+z = sqrt(besselk(4/3,rho-i))
+
+z =
+
+   0.3730 + 0.3214i
+
+huge = exp(log(realmax))
+
+huge =
+
+  1.7977e+308
+
+toobig = pi*huge
+
+toobig =
+
+   Inf
+
+Z = zeros(2,4)
+
+Z =
+
+     0     0     0     0
+     0     0     0     0
+
+F = 5*ones(3,3)
+
+F =
+
+     5     5     5
+     5     5     5
+     5     5     5
+
+N = fix(10*rand(1,10))
+
+N =
+
+     8     9     1     9     6     0     2     5     9     9
+
+R = randn(4,4)
+
+R =
+
+   -1.3499    0.7147    1.4090    0.7172
+    3.0349   -0.2050    1.4172    1.6302
+    0.7254   -0.1241    0.6715    0.4889
+   -0.0631    1.4897   -1.2075    1.0347
+
+load magik.dat
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('load')" style="font-weight:bold">load</a>
+Unable to read file 'magik.dat'. No such file or directory.
+} 
+
+magik
+{Unrecognized function or variable 'magik'.
+} 
+magik
+B = [A A+32; A+48 A+16]
+
+B =
+
+    16     3     2    13    48    35    34    45
+     5    10    11     8    37    42    43    40
+     9     6     7    12    41    38    39    44
+     4    15    14     1    36    47    46    33
+    64    51    50    61    32    19    18    29
+    53    58    59    56    21    26    27    24
+    57    54    55    60    25    22    23    28
+    52    63    62    49    20    31    30    17
+
+sum(B)
+
+ans =
+
+   260   260   260   260   260   260   260   260
+
+X = A;
+X(:,2) = []
+
+X =
+
+    16     2    13
+     5    11     8
+     9     7    12
+     4    14     1
+
+X(1,2) = []
+{A null assignment can have only one non-colon index.
+} 
+X(2:2:10) = [
+]
+
+X =
+
+    16     9     2     7    13    12     1
+
+x = 0:pi/100:2*pi;
+y = sin(x);
+plot(x,y)
+
+plot(x,y)
+xlabel('x = 0:2\pi')
+ylabel('Sine of x')
+title('Plot of the Sine Function','FontSize',12)
+x = 0:pi/100:2*pi;
+y = sin(x);
+y2 = sin(x-.25);
+y3 = sin(x-.5);
+plot(x,y,x,y2,x,y3)
+legend('sin(x)','sin(x-.25)','sin(x-.5)')
+plot(x,y,'color_style_marker')
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('plot')" style="font-weight:bold">plot</a>
+Invalid color or line style.
+} 
+plot(x,y,'ks') 
+
+plot(x,y,'r:+')
+x1 = 0:pi/100:2*pi;
+x2 = 0:pi/10:2*pi;
+plot(x1,sin(x1),'r:',x2,sin(x2),'r+')
+plot(Z)
+
+plot(real(Z),imag(Z)
+ plot(real(Z),imag(Z)
+                     ↑
+{Invalid expression. When calling a function or indexing a variable, use parentheses. Otherwise, check for mismatched delimiters.
+} 
+plot(real(Z),imag(Z))
+t = 0:pi/10:2*pi;
+plot(exp(i*t),'-o')
+axis equal
+hold on
+[x,y,z] = peaks;
+pcolor(x,y,z)
+shading interp
+hold on
+contour(x,y,z,20,'k')
+hold off
+figure(n)
+{Unrecognized function or variable 'n'.
+} 
+figure
+clf figure
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('clo', 'C:\Program Files\MATLAB\R2021a\toolbox\matlab\graphics\private\clo.m', 40)" style="font-weight:bold">clo</a> (<a href="matlab: opentoline('C:\Program Files\MATLAB\R2021a\toolbox\matlab\graphics\private\clo.m',40,0)">line 40</a>)
+Unknown command option.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('clf', 'C:\Program Files\MATLAB\R2021a\toolbox\matlab\graphics\clf.m', 117)" style="font-weight:bold">clf</a> (<a href="matlab: opentoline('C:\Program Files\MATLAB\R2021a\toolbox\matlab\graphics\clf.m',117,0)">line 117</a>)
+clo(fig, extra{:});
+} 
+clf reset
+t = 0:pi/10:2*pi;
+[X,Y,Z] = cylinder(4*cos(t));
+subplot(2,2,1); mesh(X)
+subplot(2,2,2); mesh(Y)
+subplot(2,2,3); mesh(Z)
+subplot(2,2,4); mesh(X,Y,Z)
+axis auto
+
+axis equal
+plot(exp(i*[0:pi/10:2*pi]))
+axis auto normal
+axis equal
+axis auto normal
+axis on
+axis off
+grid on
+grid off
+t = -pi:pi/100:pi;
+y = sin(t);
+plot(t,y)
+axis([-pi pi -1 1])
+xlabel('-\pi \leq {\itt} \leq \pi')
+ylabel('sin(t)')
+title('Graph of the sine function')
+text(1,-1/3,'{\itNote the odd symmetry.}')
+diary off
