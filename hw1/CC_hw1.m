@@ -10,7 +10,7 @@
 %---------------------------------------------------------------------
 
 % Times we will plot
-t = 0:0.000001:0.003;
+t = 0:0.000001:0.0003;
 
 % All from given equation
 steadyState = 15*sin(40000*t);
@@ -19,8 +19,8 @@ total = steadyState + transient;
 
 figure()
 hold on
-plot(t, steadyState)
-plot(t, transient)
+plot(t, steadyState, '.')
+plot(t, transient, '-')
 plot(t,total)
 legend("Steady State", "Transient", "Total")
 xlabel("Time (s)")
@@ -33,18 +33,19 @@ C = 1/(30*pi);
 a = 1/(R*C);
 
 % w = 2pif
-w = 2*pi*logspace(-1,4);
+f = logspace(-1,4, 1000);
+w = 2*pi*f;
 
 % Calculate magnitude and angle to plot
-transferMag = (a^2) ./ (a^2 + w.^2);
+transferMag = 20*log10((a^2) ./ (a^2 + w.^2));
 phaseResponse = angle((a^2) ./ ((a + 1j.*w).^2));
 
 figure()
 hold on
 subplot(2, 1, 1, 'XScale', 'log');
-loglog(w, transferMag);
+semilogx(f, transferMag);
 legend("Magnitude response");
 subplot(2, 1, 2, 'XScale', 'log');
-semilogx(w, phaseResponse);
+semilogx(f, phaseResponse);
 legend("Phase response");
 hold off
