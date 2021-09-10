@@ -19,6 +19,8 @@ total = steadyState + transient;
 
 figure()
 hold on
+grid on
+title("Response graphs")
 plot(t, steadyState, '.')
 plot(t, transient, '-')
 plot(t,total)
@@ -26,6 +28,7 @@ legend("Steady State", "Transient", "Total")
 xlabel("Time (s)")
 ylabel("Current (mA)")
 hold off
+print("1", "-dpng");
 
 % MATLAB Frequency-Domain Plot
 R = 1;
@@ -38,14 +41,26 @@ w = 2*pi*f;
 
 % Calculate magnitude and angle to plot
 transferMag = 20*log10((a^2) ./ (a^2 + w.^2));
-phaseResponse = angle((a^2) ./ ((a + 1j.*w).^2));
+phaseResponse = -atan2(2*a*w, a.^2 - w.^2);
 
+% Plot magnitude in db
 figure()
 hold on
+grid on
 subplot(2, 1, 1, 'XScale', 'log');
 semilogx(f, transferMag);
+title("Magnitude response")
+xlabel("Hz");
+ylabel("Db");
 legend("Magnitude response");
+
+% Plot phase shift
 subplot(2, 1, 2, 'XScale', 'log');
 semilogx(f, phaseResponse);
+title("Phase response")
+xlabel("Hz");
+ylabel("Rad")
 legend("Phase response");
 hold off
+
+print("2", "-dpng");
