@@ -1,0 +1,7 @@
+t = -2*pi:0.05:2*pi;
+
+f = 2*(t - 4.;
+
+grid on
+hold on
+plot(t, f);
