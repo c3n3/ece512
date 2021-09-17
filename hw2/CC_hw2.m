@@ -44,6 +44,8 @@ h(2) = plot(cos(0:0.01:2*pi), sin(0:0.01:2*pi), '--', 'color', 'b');
 plot(a(R,r,p,x) / m, b(R,r,p,x) / m)
 
 % Configure
+title("Roots of unity with a spiro graph");
+legend("Unity roots", "Unit circle", "Spiro graph");
 uistack(h(1), 'top');
 pause(0.5);
 uistack(h(2), 'top');

@@ -1,0 +1,14 @@
+t = -0.333:0.001:4;
+
+u = @(t) t > 0; 
+
+f = @(t) 5.38 ;
+
+%fe = @(t) (f(t) + f(-t)) / 2;
+%fo = @(t) (f(t) - f(-t)) / 2;
+
+grid on
+%plot(t, fo(t));
+%plot(t, fe(t));
+plot(t, f(t));
+hold off
