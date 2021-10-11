@@ -8,21 +8,58 @@ function hw4_CC(inputFile, filtType, fc)
     x = x{1};
     dTau = times(2) - times(1);
     RC = 1 / (2 * pi * fc);
-    h = 0;
+    hfun = 0;
+    delta = 0;
     if (filtType == 0)
     % HLP
         hfun = @(t) (1 / (RC^2)) * t .* exp(-t / RC);
-        h = hfun(0:dTau:10*dTau);
+        
     else
-        hfun = @(t) 1/dTau + ((-2 / (RC)) * (1 / (RC^2)) * t) .* exp(-t / RC);
-        h = hfun(0:dTau:10*dTau);
+    %HHP
+        hfun = @(t) ((-2 / (RC)) + (1 / (RC^2)) * t) .* exp(-t / RC);
+        delta = (1/dTau);
     end
-    h
+    h = hfun(0:dTau:20*RC);
+    h(1) = delta + h(1);
     y = physConv_CC(x,h,dTau);
-    
-    t = 0:dTau:(length(y) - 1)*dTau;
     figure()
     grid on
-    plot(t,y')
+    hold on
+    t = 0:dTau:(length(x) - 1)*dTau;
+    subplot(3, 1, 1);
+    grid on
+    plot(t, x);
+    
+    name = sprintf("%s, %d Samples, Δτ = %f", inputFile, length(x), dTau);
+    title(name);
+    xlabel("Time (s)");
+    ylabel("Voltage (V)");
+    legend("X(t)");
+
+    % Plot phase shift
+    t = 0:dTau:(length(h) - 1)*dTau;
+    subplot(3, 1, 2);
+    grid on
+    plot(t, h);
+    type = "High_pass";
+    if (filtType == 0)
+       type = "Low_pass";
+    end
+    name = sprintf("h(t) of a %s filter, fc = %f", type, fc);
+    title(name);
+    xlabel("Time (s)");
+    ylabel("h(t)")
+    legend("impulse response");
+    
+    t = 0:dTau:(length(y) - 1)*dTau;
+    subplot(3, 1, 3);
+    grid on
+    plot(t, y');
+    title("Y(t) Output")
+    xlabel("Time (s)");
+    ylabel("Voltage (V)");
+    legend("Y(t)");
+    fileName = sprintf("%s-fc%d-%s.PNG", inputFile, fc, type);
+    print(fileName, "-dpng");
 end
 

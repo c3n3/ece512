@@ -22,5 +22,5 @@
 % 
 hw4_CC("square-400ms.txt", 1, 20);
 hw4_CC("square-400ms.txt", 0, 20);
-hw4_CC("ecg.txt", 0, 10);
+hw4_CC("ecg.txt", 0, 15);
 hw4_CC("SpO2.txt", 1, 1);
