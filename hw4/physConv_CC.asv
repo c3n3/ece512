@@ -1,5 +1,5 @@
 function [y] = physConv_CC(x,h,dTau)
-    y = zeros(length(x) + length(h) - 1,1);
+    y = zeros(length(x) + length(h) - 1);
     validHResponses = zeros(0,2);
     
     for it = 1:length(y)
@@ -14,27 +14,21 @@ function [y] = physConv_CC(x,h,dTau)
         % Here we add the value and iteration of the 
         % reponse for the new input
         validHResponses(end + 1,1) = val;
-        validHResponses(end,2) = 1;
+        validHResponses(end + 1,2) = 1;
         
         result = 0;
-        popFirst = 0;
-        [c,r] = size(validHResponses);
-        for n = 1:c
-            resp = validHResponses(n,:);
+        for n = 1:length(validHResponses)
+            resp = validHResponses(n);
             % Add x(t) * h(t - n*dTau)
             result = result + resp(1) * h(resp(2));
             
             % Delay the response
-            validHResponses(n,2) = resp(2) + 1;
+            validHResponses(n,1) = resp(1) resp(2) + 1];
             if (resp(2) + 1 > length(h))
-                % Remove responses that are not valid
-                popFirst = 1;
+                validHResponses(n) = [];
             end
         end
-        if (popFirst == 1)
-           validHResponses(1,:) = [];
-        end
-        y(it) = result*dTau;
+        y(it) = result;
     end
 end
 

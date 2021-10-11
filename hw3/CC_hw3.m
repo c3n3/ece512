@@ -9,20 +9,36 @@
 % Kansas State University
 %---------------------------------------------------------------------
 
-t = -8:0.001:8;
+t = 0:0.001:3;
 
 u = @(t) t > 0; 
 
-f = @(t) (3 - exp(-2*t)) .* (u(t + 1) - u(t - 4));
+series = @(t) (-0.2 * exp(-5 * t) .* cos(5*t + pi / 2));
 
-fe = @(t) (f(t) + f(-t)) / 2;
-fo = @(t) (f(t) - f(-t)) / 2;
+parallel = @(t) (-0.5 * exp(-2 * t) - t .* exp(-2*t));
 
-hold on
+
+% Serial plot
+subplot(2, 1, 1);
 grid on
-plot(t, fo(t));
-plot(t, fe(t));
-plot(t, f(t));
+plot(t, series(t));
 
-legend("fo(t)", "fe(t)", "f(t)");
-hold off
+title("Series R = 20\Omega, L = 2H, C = 10mF")
+legend("Il(t)")
+ylabel("Amps")
+xlabel("Time (s)")
+
+
+% Parallel plot
+t = 0:0.001:5;
+
+subplot(2, 1, 2);
+grid on
+plot(t, parallel(t));
+
+title("Parallel R = 0.5\Omega, L = 0.5H, C = 0.5F")
+legend("Il(t)")
+ylabel("Amps")
+xlabel("Time (s)")
+
+print("out.png", "-dpng");

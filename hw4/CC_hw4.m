@@ -11,3 +11,13 @@
 
 
 % We do convolutions
+%x = [2,3,1,-1,-1];
+%h = [2,1,-0.5,0.25];
+%dTau = 0.4;
+%y = physConv_CC(x,h,dTau);
+%t = 0:dTau:(length(y) - 1)*dTau;
+%figure()
+%grid on
+%plot(t,y')
+
+hw4_CC("square-400ms.txt", 0, 1);
