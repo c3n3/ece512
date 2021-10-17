@@ -2,23 +2,24 @@
 
 N = 10;
 
-max = 10;
-min = -10;
+max = 25;
+min = -25;
 inc = 0.01;
 a0 = 0;
-w0 = pi / 2;
 
 
-thetaN = @(n) 0 * n;
-coeffeciant = @(n) (-4 * sin(n * pi/2)) ./ (n*pi);
+
+thetaN = @(n) (-pi/2) * ones(length(n),1);
+coeffeciant = @(n) (-1./(pi*n));
 soid = @(t,n) cos(n*w0*t + thetaN(n));
 
 term = @(t,n) coeffeciant(n) .* soid(t,n);
 
-f = @(t) (t < 0) * -1 + (t > 0) * 1;
-center = 1;
-period = 4;
+f = @(t) t/(2*pi);
+center = pi;
+period = 2*pi;
 
+w0 = 2*pi / period;
 t = min:inc:max;
 
 result = zeros(length(t),1);
@@ -29,10 +30,10 @@ for i = t
     end
 end
 
-func = zeros((center - min + max - center),1);
+func = zeros(round((center - min + max - center)),1);
 funcTimes = zeros(length(func),1);
 point = findStartPoint(min, center, period);
-for i = 0:(center - min + max - center) / period
+for i = 0:round((center - min + max - center) / period)
     for time = point - period/2 : inc : point + period / 2
         index = round(i * period / inc + (time - (point - period/2)) / inc) + 1;
         funcTimes(index) = time;

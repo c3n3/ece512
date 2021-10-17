@@ -1,24 +1,25 @@
 
 
-N = 20;
+N = 10;
 
-max = 5;
-min = -5;
+max = 25;
+min = -25;
 inc = 0.01;
-a0 = 1/3;
-w0 = pi;
+a0 = 0;
 
 
-thetaN = @(n) 0;
-coeffeciant = @(n) (4/w0^2) * (((-1).^n)./n.^2);
+
+thetaN = @(n) (pi/2) * ones(length(n),1);
+coeffeciant = @(n) (1./(pi*n));
 soid = @(t,n) cos(n*w0*t + thetaN(n));
 
-term = @(t,n) coeffeciant(n) * soid(t,n);
+term = @(t,n) coeffeciant(n) .* soid(t,n);
 
-f = @(t) t^2;
-center = 0;
-period = 2;
+f = @(t) t/(2*);
+center = pi;
+period = 2*pi;
 
+w0 = 2*pi / period;
 t = min:inc:max;
 
 result = zeros(length(t),1);
@@ -29,10 +30,10 @@ for i = t
     end
 end
 
-func = zeros((center - min + max - center),1);
+func = zeros(round((center - min + max - center)),1);
 funcTimes = zeros(length(func),1);
 point = findStartPoint(min, center, period);
-for i = 0:(center - min + max - center) / period
+for i = 0:round((center - min + max - center) / period)
     for time = point - period/2 : inc : point + period / 2
         index = round(i * period / inc + (time - (point - period/2)) / inc) + 1;
         funcTimes(index) = time;
@@ -57,12 +58,15 @@ On = thetaN(1:N);
 % Phase plot, amplitude plot
 figure()
 grid on
-plot(1:N, Cn);
+stem(1:N, Cn);
+legend("Cn");
+title("Amplitude plot");
 
 figure()
 grid on
-plot(1:N, On);
-
+stem(1:N, On);
+legend("\Thetan");
+title("Phase plot");
 
 function point = findStartPoint(old, center, period)
     point = center;
