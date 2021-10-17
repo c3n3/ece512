@@ -2,24 +2,24 @@
 
 N = 15;
 
-max = 5;
+max = 12;
 min = -max;
 inc = 0.01;
-a0 = 0;
+a0 = 0.5;
 
 
 
 
 
-f = @(t) (t > -pi/4 & t < pi/4) * 4 * t / pi;
+f = @(t) (t > -1 & t < 1) + (t >= 1 & t < 2) * (-t + 2) + (t > -2 & t <= -1) * (t + 2);
 center = 0;
-period = pi;
+period = 6;
 
 w0 = 2*pi / period;
 t = min:inc:max;
 
-thetaN = @(n) (-pi/2) * ones(length(n),1);
-coeffeciant = @(n) (2*sin(n*pi/2)-n.*pi.*cos(n*pi/2)) * 2 ./ (n.^2 * pi^2);
+thetaN = @(n) 0 * n;
+coeffeciant = @(n) ((-6 ./(n.^2.*pi^2)).*cos(2.*pi.*n./3) + (6 ./(n.^2.*pi^2)).*cos(pi.*n./3));
 soid = @(t,n) cos(n*w0*t + thetaN(n));
 term = @(t,n) coeffeciant(n) .* soid(t,n);
 
