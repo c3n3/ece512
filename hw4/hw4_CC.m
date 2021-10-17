@@ -1,3 +1,14 @@
+%---------------------------------------------------------------------
+% File: hw4_CC.m
+% Description: Plots outputs via convolution, and relevant graphs.
+% Author: Caden Churchman, ccaden21@ksu.edu,
+% (c)2021, Caden Churchman. All rights reserved.
+% Date: 10 October 2021(Version 1.00)
+% Platform: MATLAB Release R2021a, Ubuntu 20.04
+% Reference: Steve Warren. ECE 512 Homework Assignment #4, (c)2021,
+% Kansas State University
+%---------------------------------------------------------------------
+
 function hw4_CC(inputFile, filtType, fc)
     res = fopen(inputFile);
     
@@ -41,9 +52,9 @@ function hw4_CC(inputFile, filtType, fc)
     subplot(3, 1, 2);
     grid on
     plot(t, h);
-    type = "High_pass";
+    type = "High-pass";
     if (filtType == 0)
-       type = "Low_pass";
+       type = "Low-pass";
     end
     name = sprintf("h(t) of a %s filter, fc = %f", type, fc);
     title(name);
