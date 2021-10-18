@@ -1,26 +1,30 @@
 
 
-N = 15;
+N = 30;
 
-max = 5;
+max = 4;
 min = -max;
 inc = 0.01;
-a0 = 0;
+a0 = 0.7689;
 
 
 
 
 
-f = @(t) (t > -pi/4 & t < pi/4) * 4 * t / pi;
-center = 0;
-period = pi;
+f = @(t) exp(-t) / 2.2;
+center = pi/4;
+period = pi/2;
 
 w0 = 2*pi / period;
 t = min:inc:max;
 
-thetaN = @(n) (-pi/2) * ones(length(n),1);
-coeffeciant = @(n) 2./(3*n*pi) .* (-3*sin(n*pi/3) + 6 * sin(2 * pi * n ./ 3) - (9 ./(n*pi))*cos(2*pi*n./3) ...
-    - 6 * );
+an = @(n) (4./(pi*(1 + 16 * n.^2))) .* (exp(-pi/2) .* (4 .* sin(4.*n) - cos(4.*n)) + 1);
+bn = @(n) (4./(pi*(1 + 16 * n.^2))) .* (exp(-pi/2) .* (-sin(4.*n) - 4.*n.*cos(4*n)) + n*4);
+
+
+
+thetaN = @(n) atan(-bn(n) ./ an(n));
+coeffeciant = @(n) sqrt(bn(n).^2 + an(n).^2);
 soid = @(t,n) cos(n*w0*t + thetaN(n));
 term = @(t,n) coeffeciant(n) .* soid(t,n);
 
