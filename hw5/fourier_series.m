@@ -7,10 +7,6 @@ min = -max;
 inc = 0.01;
 a0 = 0.504;
 
-
-
-
-
 f = @(t) exp(-t) / 2.2;
 center = pi/4;
 period = pi/2;
@@ -75,11 +71,3 @@ stem(1:N, On);
 legend("\Thetan");
 title("Phase plot");
 
-function point = findStartPoint(old, center, period)
-    point = center;
-    
-    while (abs(point - old) > period + 0.001)
-       point = point - period; 
-    end
-    fprintf("Next period is %f\n", point);
-end
