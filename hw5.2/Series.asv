@@ -1,0 +1,8 @@
+function [an, bn] = Series(file, N, w0)
+    an = 0;
+    bn = 0;
+    for i = [1:size(file)]
+        an = SeriesInt(file, file())
+    end
+end
+
