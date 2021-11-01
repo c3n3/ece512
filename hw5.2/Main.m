@@ -1,12 +1,12 @@
-res = fopen('square-400ms.txt');
+res = fopen('SpO2.txt');
 C = textscan(res, "%f %f", 'Delimiter', '\n');
 times = C(1,1);
 times = times{1};
 x = C(1,2);
-x = x{1};
+x = x{1} * 2;
 T0 = (times(end) - times(1)) + (times(2) - times(1));
 w0 = 2*pi / (T0);
-NUM_Ns = 20;
+NUM_Ns = 200;
 cn = zeros(NUM_Ns, 1);
 on = zeros(NUM_Ns, 1);
 
